@@ -5,9 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>정다운 — 독립 큐레이터 · 시각예술 연구자</title>
 <meta name="description" content="독립 큐레이터이자 시각예술 연구자 정다운의 전시 기획, 평론, 강의 아카이브.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="정다운 Dawoon Jeong">
+<meta property="og:url" content="https://daunarte.github.io/">
 <meta property="og:title" content="정다운 — 독립 큐레이터 · 시각예술 연구자">
 <meta property="og:description" content="전시 기획, 평론, 강의 아카이브">
-<meta property="og:image" content="images/munteok.jpg">
+<meta property="og:image" content="https://daunarte.github.io/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
@@ -35,20 +44,7 @@
       <p class="hero-eyebrow">INDEPENDENT CURATOR · VISUAL ART RESEARCHER</p>
       <h1>전시를 기획하고,<br>글을 쓰고,<br>가르칩니다.</h1>
     </div>
-    <dl class="hero-meta">
-      <div>
-        <dt class="label">현재</dt>
-        <dd>서울디지털대학교 회화과 객원교수<br>인천대학교 조형예술학부 강사</dd>
-      </div>
-      <div>
-        <dt class="label">위원</dt>
-        <dd>경기도 건축물 미술작품 심의위원 (11기)<br>인천광역시 건축물 미술작품 심의위원</dd>
-      </div>
-      <div>
-        <dt class="label">연구</dt>
-        <dd>홍익대학교 대학원 예술학 박사 수료</dd>
-      </div>
-    </dl>
+    <dl class="hero-meta" id="hero-meta"></dl>
   </section>
 
   <section class="wrap feature" id="featured" aria-label="최근 프로젝트"></section>
@@ -66,12 +62,8 @@
     <div class="wrap">
       <h2 class="label" id="about-title">ABOUT</h2>
       <div class="band-body">
-        <p class="big">정다운은 인천을 기반으로 활동하는 독립 큐레이터이자 시각예술 연구자입니다. 한국화를 전공하고 빌렘 플루서의 기술적 형상 이론으로 사진을 연구했으며, 대안공간 임시공간의 큐레이터를 거쳐 전시 기획, 평론, 미술 교육을 함께 이어가고 있습니다.</p>
-        <div class="band-cols">
-          <div><span class="label">학력</span>홍익대학교 대학원 예술학 박사 수료 (2026)<br>이화여자대학교 대학원 예술학 석사 (2019)<br>인천대학교 조형예술학부 한국화 (2014)</div>
-          <div><span class="label">경력</span>인천대학교 조형연구소 연구원 (2019–2026)<br>인천대학교 융합예술영재교육연구소 연구원<br>임시공간 큐레이터 · 동무비평 삼사 편집위원</div>
-          <div><span class="label">자격</span>문화예술교육사 2급<br>중등학교 정교사 2급 (미술)<br>직업능력개발훈련교사</div>
-        </div>
+        <p class="big" id="about-lead"></p>
+        <div class="band-cols" id="about-cols"></div>
         <a class="btn-line" href="about.html">전체 이력 보기</a>
       </div>
     </div>
