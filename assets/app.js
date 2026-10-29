@@ -73,6 +73,34 @@
   }
 
   /* ── 홈 ── */
+  // 줄 목록을 <br>로 이어 붙인다
+  function lines(list) {
+    var out = [];
+    list.forEach(function (t, i) {
+      if (i) out.push(el('br'));
+      out.push(t);
+    });
+    return out;
+  }
+
+  function renderHomeText() {
+    var meta = document.getElementById('hero-meta');
+    if (meta && SITE.homeMeta) {
+      SITE.homeMeta.forEach(function (m) {
+        meta.appendChild(el('div', {}, [el('dt', { class: 'label', text: m[0] }), el('dd', {}, lines(m[1]))]));
+      });
+    }
+    var A = SITE.homeAbout;
+    var lead = document.getElementById('about-lead');
+    var cols = document.getElementById('about-cols');
+    if (A && lead) lead.textContent = A.text;
+    if (A && cols) {
+      A.cols.forEach(function (c) {
+        cols.appendChild(el('div', {}, [el('span', { class: 'label', text: c[0] })].concat(lines(c[1]))));
+      });
+    }
+  }
+
   function renderFeatured() {
     var mount = document.getElementById('featured');
     var e = byId(P.featured);
@@ -143,6 +171,17 @@
         select(h, false);
         document.getElementById('index').scrollIntoView();
       }
+    });
+
+    // 주소가 이미 #writing일 때 메뉴의 '글'을 다시 누르면 hashchange가 안 생기므로 직접 처리
+    document.querySelectorAll('a[href^="index.html#"]').forEach(function (a) {
+      var h = a.getAttribute('href').split('#')[1];
+      if (!CAT_LABEL[h]) return;
+      a.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        select(h, true);
+        document.getElementById('index').scrollIntoView();
+      });
     });
 
     draw();
@@ -226,8 +265,8 @@
     var next = siblings[i + 1];
     if (prev || next) {
       mount.appendChild(el('nav', { class: 'pager', 'aria-label': '이전·다음' }, [
-        prev ? el('a', { href: workHref(prev) }, [el('span', { class: 'label', text: '← 더 최근' }), el('span', { class: 't', text: prev.title })]) : null,
-        next ? el('a', { class: 'next', href: workHref(next) }, [el('span', { class: 'label', text: '이전 →' }), el('span', { class: 't', text: next.title })]) : null
+        prev ? el('a', { href: workHref(prev) }, [el('span', { class: 'label', text: '← 최근 항목' }), el('span', { class: 't', text: prev.title })]) : null,
+        next ? el('a', { class: 'next', href: workHref(next) }, [el('span', { class: 'label', text: '지난 항목 →' }), el('span', { class: 't', text: next.title })]) : null
       ]));
     }
   }
@@ -256,7 +295,7 @@
 
   fillCommon();
   var page = document.body.getAttribute('data-page');
-  if (page === 'home') { renderFeatured(); renderIndex(); }
+  if (page === 'home') { renderHomeText(); renderFeatured(); renderIndex(); }
   if (page === 'work') renderWork();
   if (page === 'about') renderAbout();
 })();
