@@ -21,7 +21,7 @@
 - 새 전시를 추가하려면 `entries` 안의 기획 항목 하나를 복사해 붙여 넣고 `id`, `title`, `date` 등을 바꿉니다.
 - 이미지는 `images/` 폴더에 넣고 `image: '파일이름.jpg'`로 적습니다.
 - 홈 상단의 「최근 기획」은 `profile.featured`에 적은 id의 항목이 나옵니다.
-- 영문 이름(`profile.nameEn`)과 인스타그램 주소(`profile.instagram`)를 채워 주세요.
+- 영문 이름은 `profile.nameEn`, 인스타그램 주소는 `profile.instagram`에서 바꿉니다.
 
 ## 미리 보기
 
