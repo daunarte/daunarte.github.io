@@ -14,11 +14,11 @@
 window.SITE = {
   profile: {
     nameKo: '정다운',
-    nameEn: 'Daun Jung', // TODO: 실제로 쓰는 영문 이름으로 바꾸세요
+    nameEn: 'Dawoon Jeong',
     roleKo: '독립 큐레이터 · 시각예술 연구자',
     roleEn: 'Independent Curator · Visual Art Researcher',
     email: 'daunarte@gmail.com',
-    instagram: '', // 예: 'https://www.instagram.com/아이디' — 비워두면 링크가 숨겨집니다
+    instagram: 'https://www.instagram.com/daunarte/', // 비워두면 링크가 숨겨집니다
     featured: 'munteok'
   },
 
