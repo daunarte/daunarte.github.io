@@ -87,7 +87,7 @@
     var meta = document.getElementById('hero-meta');
     if (meta && SITE.homeMeta) {
       SITE.homeMeta.forEach(function (m) {
-        meta.appendChild(el('div', {}, [el('dt', { class: 'label', text: m[0] }), el('dd', {}, lines(m[1]))]));
+        meta.appendChild(el('div', {}, [m[0] ? el('dt', { class: 'label', text: m[0] }) : null, el('dd', {}, lines(m[1]))]));
       });
     }
     var A = SITE.homeAbout;
@@ -281,9 +281,13 @@
         cv.appendChild(el('section', { class: 'cv-section' }, [
           el('h2', { text: sec.title }),
           el('ul', { class: 'cv-list' }, sec.items.map(function (it) {
+            var linked = it[3] && byId(it[3]);
             return el('li', { class: 'cv-item' }, [
               el('span', { class: 'when', text: it[0] }),
-              el('span', {}, [it[1], it[2] ? el('span', { class: 'note', text: ' — ' + it[2] }) : null])
+              el('span', {}, [
+                linked && hasPage(linked) ? el('a', { class: 'accent', href: workHref(linked), text: it[1] }) : it[1],
+                it[2] ? el('span', { class: 'note', text: ' — ' + it[2] }) : null
+              ])
             ]);
           }))
         ]));
