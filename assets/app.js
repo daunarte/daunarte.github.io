@@ -293,8 +293,6 @@
         ]));
       });
     }
-    var printBtn = document.getElementById('print-cv');
-    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
   }
 
   fillCommon();
