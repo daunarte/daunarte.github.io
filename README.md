@@ -8,7 +8,7 @@
 | --- | --- |
 | `index.html` | 홈 — 소개 문구, 최근 기획, 전체 목록(Index, 분류 필터) |
 | `work.html` | 전시·글 상세 페이지 (`work.html?id=항목id`) |
-| `about.html` | 소개·이력. 「CV를 PDF로 저장」 버튼은 인쇄용 레이아웃으로 PDF를 만듭니다 |
+| `about.html` | 소개·이력 |
 | `404.html` | 없는 주소로 들어왔을 때 보이는 페이지 |
 | `assets/content.js` | **모든 내용** — 전시, 글, 강의, 이력 |
 | `assets/app.js` | 화면 그리는 코드 (고칠 일 거의 없음) |
@@ -24,7 +24,7 @@
 - 이미지는 `images/` 폴더에 넣고 `image: '파일이름.jpg'`로 적습니다.
 - 홈 상단의 「최근 기획」은 `profile.featured`에 적은 id의 항목이 나옵니다.
 - 영문 이름은 `profile.nameEn`, 인스타그램 주소는 `profile.instagram`에서 바꿉니다.
-- 홈 첫 화면 오른쪽의 현재 직함·위원 정보는 `homeMeta`, 홈 아래쪽 검은 ABOUT 띠는 `homeAbout`에서 바꿉니다.
+- 홈 첫 화면 오른쪽의 직함은 `homeMeta`, 홈 아래쪽 검은 ABOUT 띠는 `homeAbout`에서 바꿉니다.
 - 소개 페이지의 약력과 이력은 `bio`와 `cv`에서 바꿉니다.
 
 ## 미리 보기
