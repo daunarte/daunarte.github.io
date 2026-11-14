@@ -6,7 +6,7 @@
 
 | 파일 | 내용 |
 | --- | --- |
-| `index.html` | 홈 — 소개 문구, 최근 기획, 전체 목록(Index, 분류 필터) |
+| `index.html` | 홈 — 소개 문구, 전체 목록(Index, 분류 필터) |
 | `work.html` | 전시·글 상세 페이지 (`work.html?id=항목id`) |
 | `about.html` | 소개·이력 |
 | `404.html` | 없는 주소로 들어왔을 때 보이는 페이지 |
@@ -22,9 +22,8 @@
 
 - 새 전시를 추가하려면 `entries` 안의 기획 항목 하나를 복사해 붙여 넣고 `id`, `title`, `date` 등을 바꿉니다.
 - 이미지는 `images/` 폴더에 넣고 `image: '파일이름.jpg'`로 적습니다.
-- 홈 상단의 「최근 기획」은 `profile.featured`에 적은 id의 항목이 나옵니다.
 - 영문 이름은 `profile.nameEn`, 인스타그램 주소는 `profile.instagram`에서 바꿉니다.
-- 홈 첫 화면 오른쪽의 직함은 `homeMeta`, 홈 아래쪽 검은 ABOUT 띠는 `homeAbout`에서 바꿉니다.
+- 이름 옆 직함은 `profile.roleKo`, 홈 아래쪽 검은 ABOUT 띠는 `homeAbout`에서 바꿉니다.
 - 소개 페이지의 약력과 이력은 `bio`와 `cv`에서 바꿉니다.
 
 ## 미리 보기
