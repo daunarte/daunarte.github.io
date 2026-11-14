@@ -15,17 +15,11 @@ window.SITE = {
   profile: {
     nameKo: '정다운',
     nameEn: 'Dawoon Jeong',
-    roleKo: '독립 큐레이터 · 시각예술 연구자',
+    roleKo: '시각예술 연구자 · 독립 큐레이터', // 모든 페이지 왼쪽 위 이름 옆에 보입니다
     roleEn: 'Independent Curator · Visual Art Researcher',
     email: 'daunarte@gmail.com',
-    instagram: 'https://www.instagram.com/daunarte/', // 비워두면 링크가 숨겨집니다
-    featured: 'gajuk-agyo'
+    instagram: 'https://www.instagram.com/daunarte/' // 비워두면 링크가 숨겨집니다
   },
-
-  // 홈 첫 화면 오른쪽의 짧은 정보. [제목, [줄, 줄, ...]] — 제목을 ''로 두면 제목 없이 줄만 보입니다
-  homeMeta: [
-    ['', ['시각예술 연구자', '독립 큐레이터']]
-  ],
 
   // 홈 아래쪽 검은 ABOUT 띠
   homeAbout: {

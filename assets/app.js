@@ -61,6 +61,7 @@
   /* ── 공통: 헤더·푸터 채우기 ── */
   function fillCommon() {
     document.querySelectorAll('[data-name-en]').forEach(function (n) { n.textContent = P.nameEn; });
+    document.querySelectorAll('[data-role]').forEach(function (n) { n.textContent = P.roleKo; });
     document.querySelectorAll('[data-email]').forEach(function (n) {
       n.textContent = P.email;
       n.setAttribute('href', 'mailto:' + P.email);
@@ -84,12 +85,6 @@
   }
 
   function renderHomeText() {
-    var meta = document.getElementById('hero-meta');
-    if (meta && SITE.homeMeta) {
-      SITE.homeMeta.forEach(function (m) {
-        meta.appendChild(el('div', {}, [m[0] ? el('dt', { class: 'label', text: m[0] }) : null, el('dd', {}, lines(m[1]))]));
-      });
-    }
     var A = SITE.homeAbout;
     var lead = document.getElementById('about-lead');
     var cols = document.getElementById('about-cols');
@@ -99,22 +94,6 @@
         cols.appendChild(el('div', {}, [el('span', { class: 'label', text: c[0] })].concat(lines(c[1]))));
       });
     }
-  }
-
-  function renderFeatured() {
-    var mount = document.getElementById('featured');
-    var e = byId(P.featured);
-    if (!mount || !e) return;
-    mount.appendChild(el('a', { class: 'feature-link', href: workHref(e) }, [
-      e.image ? el('div', { class: 'feature-img' }, [el('img', { src: 'images/' + e.image, alt: e.imageAlt || e.title, loading: 'eager' })]) : null,
-      el('div', { class: 'feature-body' }, [
-        el('p', { class: 'label accent', text: '최근 기획 — ' + e.year }),
-        el('h2', { text: e.title }),
-        el('p', { class: 'meta', text: [e.date, e.place].filter(Boolean).join(' · ') }),
-        e.summary ? el('p', { class: 'lede', text: e.summary }) : null,
-        el('span', { class: 'feature-more', text: '프로젝트 보기 →' })
-      ])
-    ]));
   }
 
   function renderIndex() {
@@ -297,7 +276,7 @@
 
   fillCommon();
   var page = document.body.getAttribute('data-page');
-  if (page === 'home') { renderHomeText(); renderFeatured(); renderIndex(); }
+  if (page === 'home') { renderHomeText(); renderIndex(); }
   if (page === 'work') renderWork();
   if (page === 'about') renderAbout();
 })();
